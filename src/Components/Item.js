@@ -1,11 +1,10 @@
 import React from 'react';
 
-function Items({id, destacado, nombre}) {
+function Items({id, name}) {
     return(
         <div>
             <h1>{id}</h1>
-            <p>{destacado}</p>
-            {nombre}
+            {name}
         </div>
     )
     

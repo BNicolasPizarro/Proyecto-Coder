@@ -2,8 +2,43 @@ import react from 'react';
 import Items from './Item';
 import ItemCount from './ItemCount';
 import ItemList from './ItemList';
+const promesa =()=>{
+    return new Promise((resolve)=>{
+        setTimeout(()=>
+    resolve([
+        {id: 29, destacado: true, nombre:'mango'},
+        {id: 28, destacado: true, nombre:'pera'},
+        {id: 27, destacado: true, nombre:'limon'},
+        {id: 56, destacado: false, nombre:'banana'}
+    ]), 2000
+    )
+    })
+    
+}
 
-function ItemlistContainer(props){
+const ItemList =()=>{
+    const[itemList, setItemList] = useState([])
+    
+    const ejecutarPromesa =()=>{
+        promesa().then((data)=>{
+            setItemList(data)
+        })
+    }
+    useEffect(()=>{
+        ejecutarPromesa();
+    },[])
+    return(
+      <div>
+          {itemList.map((component)=>
+          <Items id={component.id} name={component.nombre}/>)}
+      </div>
+    )
+        
+    
+}
+export default ItemList;
+
+/*function ItemlistContainer(props){
     const onAdd = (contador) => {
         if(contador==0){
             alert('el carrito esta vacio')
@@ -23,4 +58,4 @@ function ItemlistContainer(props){
     }
 
 
-export default ItemlistContainer;
+export default ItemlistContainer;*/
