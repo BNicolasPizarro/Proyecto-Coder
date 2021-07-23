@@ -1,10 +1,10 @@
 import React from 'react';
 
-function Items({id, name}) {
+function Items(component) {
     return(
         <div>
-            <h1>{id}</h1>
-            {name}
+            <h1>{'id', component.id}</h1>
+            <h1>{'nombre', component.name}</h1>
         </div>
     )
     

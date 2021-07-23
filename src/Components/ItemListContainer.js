@@ -1,7 +1,6 @@
-import react from 'react';
+import react, {useEffect,useState} from 'react';
 import Items from './Item';
 import ItemCount from './ItemCount';
-import ItemList from './ItemList';
 const promesa =()=>{
     return new Promise((resolve)=>{
         setTimeout(()=>
