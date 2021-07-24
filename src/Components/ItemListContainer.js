@@ -1,41 +1,30 @@
 import react, {useEffect,useState} from 'react';
-import Items from './Item';
-import ItemCount from './ItemCount';
-const promesa =()=>{
-    return new Promise((resolve)=>{
-        setTimeout(()=>
-    resolve([
-        {id: 29, destacado: true, nombre:'mango'},
-        {id: 28, destacado: true, nombre:'pera'},
-        {id: 27, destacado: true, nombre:'limon'},
-        {id: 56, destacado: false, nombre:'banana'}
-    ]), 2000
-    )
-    })
-    
-}
+import ItemList  from './ItemList';
+import Items from './Item'
+import ItemDetail from './ItemDetail'
 
-const ItemList =()=>{
-    const[itemList, setItemList] = useState([])
-    
-    const ejecutarPromesa =()=>{
-        promesa().then((data)=>{
-            setItemList(data)
-        })
-    }
+const ItemListContainer =()=>{
+    const [Item, setItem] = useState([]);
+
     useEffect(()=>{
-        ejecutarPromesa();
-    },[])
+        new Promise ((resolve, reject)=>{
+            setTimeout(resolve(ItemList),2000)
+        }).then((NewItem)=>{
+            setItem(NewItem)
+        })
+    })
+
     return(
       <div>
-          {itemList.map((component)=>
+          {Item.map((component)=>
           <Items id={component.id} name={component.nombre}/>)}
+          <ItemDetail/>
       </div>
     )
         
     
 }
-export default ItemList;
+export default ItemListContainer;
 
 /*function ItemlistContainer(props){
     const onAdd = (contador) => {
