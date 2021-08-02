@@ -12,15 +12,22 @@ function ItemCount({inital, stock, onAdd}) {
             setContador(contador - 1)
         }
     }
+    const clear = () => {
+        setContador(inital)
+    }
     return(
         <span>
-            <h3>stock total: {stock}</h3>
-            <h3>stock en deposito {stock-contador}</h3>
-            <button onClick={agregar}>sumar</button>
-            <h1>{contador}</h1>
+            <h1>stock total: {stock}</h1>
+            <h1>stock disponible: {stock - contador} </h1>
+            <button onClick={agregar} >agregar</button>
+            <br />
+            <span>{contador}</span>
+            <br />
             <button onClick={restar}>restar</button>
-            <br/>
-            <button onClick={()=> onAdd(contador)}>agregar al carrito</button>
+            <br />
+            <button onClick={clear}>reset</button>
+            <br />
+            <button onClick={()=> onAdd(contador)}>Agregar contenido</button>
         </span>
     )
 }
