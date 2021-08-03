@@ -1,34 +1,33 @@
-import React, {useContext} from'react'
-import ItemCount from './ItemCount'
-import {CartContext} from './CartContext';
+import React, {useContext} from 'react';
+import ItemCount from './ItemCount';
+import { Link } from 'react-router-dom';
+import { CartContext } from './CartContext';
+export default function ItemDetail({ item }) {
+  const { boton, setBoton, AddToCart } = useContext(CartContext); 
 
-function ItemDetail({detailCont}){
-    const {Boton, setBoton, AddToCart} = useContext(CartContext); 
-
-
-
-
-    const onAdd= (contador)=>{
-        alert(`El numero de items que tiene en el carrito es:  ${contador}` )
-        setBoton(true)
-        AddToCart(detailCont, contador)
+  const onAdd= (contador)=>{
+      alert(`El numero de items que tiene en el carrito es:  ${contador}` )
+      setBoton(true)
+      AddToCart(item, contador)
     }
-  
-    return (
+    return(
         <div>
                  
-                 {detailCont.title}
-                 {detailCont.description}
-                 <img  alt=""src={detailCont.image} />
+                 {item.title}
+                 {item.description}
+                 <img  alt=""src={item.pictureUrl} />
+                 {item.price}
                  <br></br>
-                 { Boton === false ? (
-                  <ItemCount onAdd={onAdd} stock={detailCont.stock} initial={1}/>
-                  ) : ({})}
-                    <button onClick={()=>({})}>Termina tu compra</button>
-                  
+                 { boton === false ? (
+                  <ItemCount onAdd={onAdd} stock={item.stock} initial={1}/>
+                  ) : (
+                  <Link to="/cart">
+                    <button onClick={()=>{setBoton(false)}}>Termina tu compra</button>
+                  </Link>
+                  )}
 
-                {console.log(detailCont)}
+                {console.log(item)}
          </div>
-
     )}
-export default ItemDetail;
+    
+  

@@ -1,8 +1,33 @@
-const ItemList =[
-    {id: 29, destacado: true, nombre:'mango'},
-    {id: 28, destacado: true, nombre:'pera'},
-    {id: 27, destacado: true, nombre:'limon'},
-    {id: 56, destacado: false, nombre:'banana'},
-]
+import {useState, useEffect} from "react";
+import MostrarItem from "./Item";
+import { getFirestore } from "../firebase/firebase-index";
 
-export default ItemList;
+export default function Item(){
+    
+    const [item, setItem] = useState([])
+    const [loading, setLoading] = useState(false)
+
+
+    useEffect(() => {
+       setLoading(true);
+       const db = getFirestore();
+       const itemCollection = db.collection("items");
+       itemCollection.get().then((querySnapshot)=>{
+           if(querySnapshot.size === 0){
+               console.log('No hay resultados')
+           }
+           setItem(querySnapshot.docs.map(doc => doc.data()))
+       }).catch((error)=>{
+           console.log("Error", error)
+       }).finally(()=>{
+           setLoading(false)
+       })
+    },[]);
+
+    return(
+        <div>
+        {item.map((component) =>
+         <MostrarItem key={component.toString()} id={component.id} title={component.title} pictureUrl={component.pictureUrl} price={component.price} />)}
+        </div>
+    )
+}

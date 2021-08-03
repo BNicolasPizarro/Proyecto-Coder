@@ -1,12 +1,15 @@
-import React from 'react';
+import React from 'react'
+import { Link } from 'react-router-dom'
 
-function Items(component) {
+export default function MostrarItem({id, title, price, pictureUrl, category}){
     return(
         <div>
-            <h1>{'id', component.id}</h1>
-            <h1>{'nombre', component.name}</h1>
+        
+            {id}
+            {title}
+            <img alt="" src={pictureUrl} />
+            {price}
+            <Link to={`/item/${id}`}>detalle del producto</Link>
         </div>
     )
-    
 }
-export default Items;

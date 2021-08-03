@@ -1,28 +1,16 @@
-import react, {useEffect,useState} from 'react';
-import ItemList  from './ItemList';
-import Items from './Item'
-import ItemDetail from './ItemDetail'
+import Item from './ItemList';
 
-const ItemListContainer =()=>{
-    const [Item, setItem] = useState([]);
 
-    useEffect(()=>{
-        new Promise ((resolve, reject)=>{
-            setTimeout(resolve(ItemList),2000)
-        }).then((NewItem)=>{
-            setItem(NewItem)
-        })
-    })
+export default function ItemListContainer(props){
+
 
     return(
-      <div>
-          {Item.map((component)=>
-          <Items id={component.id} name={component.nombre}/>)}
-          <ItemDetail/>
-      </div>
+    <div>
+        <>
+            {props.title}{props.name}
+            <Item  />
+        </>
+    </div>
     )
-        
-    
-}
-export default ItemListContainer;
+};
 

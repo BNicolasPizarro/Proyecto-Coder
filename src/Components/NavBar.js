@@ -1,35 +1,34 @@
-import React from "react";
-import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom'
-import CartWidget from "./CartWidget";
+import React, {useContext} from 'react';
+import { Link } from 'react-router-dom';
+import CartWidget from './CartWidget'
+import {CartContext} from './CartContext'
 
-export default function NavBar(){
+
+
+function NavBar(){
+    const {setBoton} = useContext(CartContext)
     return(
-        <div>
-            <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-           <div class="container-fluid">
-            <div className="collapse navbar-collapse" id="navbarColor01">
-      <ul className="navbar-nav me-auto">
-        <li className="nav-item">
-        <Link className="nav-link active"  to="/Home">Home</Link>
-        </li>
-        <li className="nav-item">
-        <Link className="nav-link" to="/Category">Category</Link>
-        </li>
-        <li className="nav-item">
-          <Link className="nav-link" to="/Checkout">Checkout</Link>
-        </li>
-        <li className="nav-item">
-        <Link className="nav-link" to="/products">Products</Link>
-        </li>
-        <li>
-            <CartWidget/>
-        </li>
-        </ul>
-        </div>
-        </div>
-        </nav>
-        </div>
-    )
-
+        <header className="head">
+            <Link to="/"><img className="image"alt=""src="https://pics.freeicons.io/uploads/icons/png/15675701751543238854-512.png" /></Link>
+            <nav>    
+            <ul className="items">
+                    <li><Link to="/">Home </Link></li>
+           
+            <CartWidget onClick={setBoton(false)} />
+            <ul  className="dropdown">
+                <li>Categories ↓ </li>
+                <ul className="DropDownMenu">
+                    <li><Link to={`/category/electrodomestico`} onClick={()=>{setBoton(false)}}>electrodomesticos</Link></li>
+                    <li><Link to={`/category/ropa`}  onClick={()=>{setBoton(false)}}>ropa</Link></li>
+                    
+                </ul>
+            </ul>
+            </ul>
+            
+            </nav>
+            
+        </header>
+    );
 }
 
+export default NavBar;

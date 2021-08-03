@@ -1,42 +1,41 @@
-//components
+// imports de React
 import './App.css';
-import NavBar from './Components/NavBar';
-import ItemListContainer from './Components/ItemListContainer';
-import ItemDetailContainer from './Components/ItemDetailContainer';
-import ItemSum from './Components/ItemSum';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
+// import { CartContext } from './components/cartContext';
+import CartContenido from './components/CartContext';
+// paginas a importar 
+import NavBar from './components/NavBar'
+import ItemListContainer from './components/ItemListContainer'
+import ItemDetailContainer from './components/ItemDetailContainer';
+import ItemCategory from './components/category';
+import Cart from './components/Cart'
 
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
-
-//Pages
-import Category from "./Pages/Category";
-import Checkout from "./Pages/Checkout";
-import Home from "./Pages/Home";
-import Product from "./Pages/Products";
 
 
 function App() {
+  
   return (
+  <CartContenido>
+  <Router>
     <div className="App">
-          <Router>
-    <NavBar />
+       <NavBar />
+    </div>
       <Switch>
-        <Route exact path='/Home'>
-          <Home />
+        <Route exact path="/">
+        <ItemListContainer />
         </Route>
-        <Route exact path='/Category'>
-          <Category />
+        <Route exact path="/item/:id">
+         <ItemDetailContainer />
         </Route>
-        <Route exact path='/Checkout'>
-          <Checkout />
+        <Route exact path="/category/:categoryId" >
+        <ItemCategory />
         </Route>
-        <Route exact path='/Products'>
-          <Product />
+        <Route exact path="/cart">
+          <Cart />
         </Route>
       </Switch>
     </Router>
-      <ItemSum/>
-     <ItemDetailContainer/>
-    </div>
+  </CartContenido>
   );
 }
 
