@@ -5,9 +5,10 @@ import firebase from 'firebase';
 import { CartContext } from './CartContext';
 
 
-export default function Formulario() {
+export default function Formulario(props) {
     const {register, handleSubmit} = useForm();
-    const [idOrder, setIdOrder] = useState("")
+    const [, setIdOrder] = useState("")
+    
     const {cart, Reducer } = useContext(CartContext)
 
     const onSubmit=(data)=>{
@@ -31,10 +32,11 @@ export default function Formulario() {
         orders.add(newOrder).then(({id})=>{
             setIdOrder(id)
             alert(`su id es: ${id}`)
-            console.log(id)
+         
         }).catch(error =>{console.log("error ->", error)})
         
     }
+
 
 
   

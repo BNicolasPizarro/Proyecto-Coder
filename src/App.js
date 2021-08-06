@@ -1,14 +1,13 @@
-// imports de React
 import './App.css';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 // import { CartContext } from './components/cartContext';
 import CartContenido from './components/CartContext';
 // paginas a importar 
-import NavBar from './components/NavBar'
-import ItemListContainer from './components/ItemListContainer'
+import NavBar from './components/NavBar.js';
+import ItemListContainer from './components/ItemListContainer.js'
 import ItemDetailContainer from './components/ItemDetailContainer';
 import ItemCategory from './components/category';
-import Cart from './components/Cart'
+import Cart from './components/Cart';
 
 
 

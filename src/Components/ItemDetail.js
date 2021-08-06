@@ -2,6 +2,7 @@ import React, {useContext} from 'react';
 import ItemCount from './ItemCount';
 import { Link } from 'react-router-dom';
 import { CartContext } from './CartContext';
+import "./ItemDetail.css"
 export default function ItemDetail({ item }) {
   const { boton, setBoton, AddToCart } = useContext(CartContext); 
 
@@ -26,7 +27,7 @@ export default function ItemDetail({ item }) {
                   </Link>
                   )}
 
-                {console.log(item)}
+                
          </div>
     )}
     

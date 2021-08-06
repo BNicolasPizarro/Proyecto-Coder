@@ -2,10 +2,11 @@ import {useState, useEffect} from "react";
 import MostrarItem from "./Item";
 import { getFirestore } from "../firebase/firebase-index";
 
+
 export default function Item(){
     
     const [item, setItem] = useState([])
-    const [loading, setLoading] = useState(false)
+    const [, setLoading] = useState(false)
 
 
     useEffect(() => {
@@ -26,8 +27,8 @@ export default function Item(){
 
     return(
         <div>
-        {item.map((component) =>
-         <MostrarItem key={component.toString()} id={component.id} title={component.title} pictureUrl={component.pictureUrl} price={component.price} />)}
+        {item.map((component, exact) =>
+         <MostrarItem key={exact} id={component.id} title={component.title} pictureUrl={component.pictureUrl} price={component.price} />)}
         </div>
     )
 }

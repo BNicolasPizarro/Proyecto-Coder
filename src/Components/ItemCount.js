@@ -1,22 +1,30 @@
-import React, { useState } from 'react';
+import React, {useState, useContext} from 'react';
+import { CartContext } from './CartContext';
 
-function ItemCount({inital, stock, onAdd}) {
-    const [contador, setContador] = useState (inital)
-    const agregar =()=>{
-        if (contador<stock){
-            setContador(contador + 1)
-        }
+export default function ItemCount({initial, stock, onAdd}){
+    const { cart, setCart} = useContext(CartContext); 
+    const [contador, setContador] = useState(initial)
+    
+     const agregar = () => {
+         if(contador < stock){
+            setContador(contador +1)
+         }
     }
-    const restar =()=>{
-        if(contador> inital){
-            setContador(contador - 1)
-        }
+    const restar = () => {
+        if(contador > initial){
+            setContador(contador -1)
+         }
     }
     const clear = () => {
-        setContador(inital)
+        setContador(initial)
     }
+
     return(
-        <span>
+        <span style={
+            {height:'500px',
+            width:'500px',
+            display:'inline-block',
+            verticalAlign:'middle'}}>
             <h1>stock total: {stock}</h1>
             <h1>stock disponible: {stock - contador} </h1>
             <button onClick={agregar} >agregar</button>
@@ -27,8 +35,7 @@ function ItemCount({inital, stock, onAdd}) {
             <br />
             <button onClick={clear}>reset</button>
             <br />
-            <button onClick={()=> onAdd(contador)}>Agregar contenido</button>
+            <button onClick={()=> onAdd(contador) && setCart(cart)}>Agregar contenido</button>
         </span>
-    )
+    )   
 }
-export default ItemCount;

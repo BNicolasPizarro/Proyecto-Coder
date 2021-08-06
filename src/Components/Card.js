@@ -7,7 +7,7 @@ import UserInfo from "./UserInfo";
             <div style={{border:'1px solid black', width:'400px', height:'260px'}}>
                   {message}
             <UserInfo {...user}/>
-            <button onClick={buttonFunction}>Aca recibo cualquier funcion</button>
+            <button onClick={buttonFunction}>Aca recibo funciones</button>
 
         
         </div>

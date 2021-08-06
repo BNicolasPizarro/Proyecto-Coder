@@ -1,6 +1,7 @@
 import React, {useContext} from 'react';
 import { Link } from 'react-router-dom';
-import CartWidget from './CartWidget'
+import CartWidget from './CartWidget.js'
+import './NavBar.css';
 import {CartContext} from './CartContext'
 
 
@@ -14,9 +15,10 @@ function NavBar(){
             <ul className="items">
                     <li><Link to="/">Home </Link></li>
            
-            <CartWidget onClick={setBoton(false)} />
+            <CartWidget onClick={setBoton(false)}
+             />
             <ul  className="dropdown">
-                <li>Categories ↓ </li>
+                <li>Categories</li>
                 <ul className="DropDownMenu">
                     <li><Link to={`/category/electrodomestico`} onClick={()=>{setBoton(false)}}>electrodomesticos</Link></li>
                     <li><Link to={`/category/ropa`}  onClick={()=>{setBoton(false)}}>ropa</Link></li>
