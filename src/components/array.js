@@ -2,17 +2,17 @@ export const Array= [
     {
     id: "1",
     category:"ropa",
-    title: " Remera vouge M para mujer",
+    title: " Remera Nike Air Shoe Box ",
     price: 500,
-    pictureUrl: "https://d26lpennugtm8s.cloudfront.net/stores/146/800/products/667fd18a-b3e6-4675-8e17-96bb144f1802_nube-dfb7628f533f70d16815366997107381-1024-1024.jpg",
+    pictureUrl: "https://www.stockcenter.com.ar/on/demandware.static/-/Sites-dabra-catalog/default/dwe2c0ecd9/products/NI_CK5772-010/NI_CK5772-010-1.JPG",
     stock:85
     },
     {
     id: "2",
     category:"ropa",
-    title: " Pantalon L para mujer",
+    title: "Zapatillas Nike Air Max Command",
     price: 500,
-    pictureUrl: "https://cdn.fashiola.mx/L558418123/gucci-hombre-pantalones-pantalones-deportivos-gg-supreme-de-algodon.jpg",
+    pictureUrl: "https://www.stockcenter.com.ar/on/demandware.static/-/Sites-dabra-catalog/default/dw7e7543cf/products/NI_718896-228/NI_718896-228-1.JPG",
     stock:50
     },
 ]

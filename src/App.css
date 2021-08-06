@@ -1,297 +1,38 @@
-* {
-  margin: 0;
-  padding: 0;
+.App {
+  text-align: center;
 }
 
-/*Variables*/
-/*Imports*/
-.footer {
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
   display: flex;
-  flex-direction: row;
-  height: 10rem;
-  background-color: #15384e;
-  margin-top: 5rem;
-  box-shadow: 0rem -0.5rem 3rem #15384e;
-  width: 100%;
-  position: sticky;
-}
-
-.footer p {
-  color: white;
-  font-size: 1rem;
-  margin: 0.1rem auto auto auto;
-}
-
-.footer div {
-  margin: auto;
-}
-
-.footer div ul {
-  display: flex;
-}
-
-.footer div ul li {
-  list-style: none;
-  margin: 0 2rem auto 2rem;
-}
-
-.footer div ul li a {
-  margin: 0 2rem 0rem 2rem;
-  color: white;
-}
-
-.footer img {
-  width: 3rem;
-  color: white;
-  margin-top: -0.5rem;
-}
-
-.footer #footerNavigation {
-  margin-left: 9rem;
-}
-
-.footer #footerNavigation li {
-  margin: 1.5rem 0 2rem 0;
-}
-
-#logoNav {
-  width: 80px;
-}
-
-#navBar {
-  background-color: #15384e;
-  margin-bottom: 3.5rem;
-  display: flex;
-  flex-direction: row;
-}
-
-.linkNav {
-  color: white;
-}
-
-#basic-navbar-nav a {
-  color: white;
-  font-size: 1rem;
-  margin: 0 1rem 0 1rem;
-  text-decoration: none;
-}
-
-#basic-navbar-nav .dropdown-menu {
-  background-color: #15384e;
-  width: 11rem;
-}
-
-#basic-navbar-nav .dropdown-menu a {
-  margin: auto;
-  text-decoration: none;
-}
-
-#basic-navbar-nav .dropdown-menu a:hover {
-  background-color: grey;
-  width: auto;
-  text-decoration: none;
-}
-
-#basic-navbar-nav .btn-outline-success {
-  color: white;
-  border-color: white;
-}
-
-.linkNav:hover {
-  color: white;
-  -webkit-text-stroke: 0.5px black;
-}
-
-#navDrop {
-  color: white;
-}
-
-#navDrop:hover {
-  color: white;
-  -webkit-text-stroke: 0.5px black;
-}
-
-#homeConteiner {
-  display: flex;
-  margin: auto;
-  width: 60rem;
-  height: 20rem;
-  margin-bottom: 2rem;
-  background-color: #15384e;
-  border: 1px solid #15384e;
-  border-radius: 25px;
-  overflow: hidden;
-}
-
-#homeConteiner a {
-  display: flex;
-  text-decoration: none;
-}
-
-#homeConteiner h2 {
-  margin: auto 3rem auto 3rem;
-}
-
-#homeConteiner #funkoHome {
-  width: 60rem;
-  margin: auto;
-  display: grid;
-  overflow: hidden;
-  margin-top: -3.5rem;
-}
-
-#homeConteiner h2 {
-  color: white;
-}
-
-#homeConteiner2 {
-  display: flex;
-  justify-content: space-evenly;
-  margin: auto;
-  margin-top: 1rem;
-  width: 60rem;
-}
-
-#homeConteiner2 .container {
-  display: grid;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
-}
-
-#homeConteiner2 a {
-  display: flex;
-  text-decoration: none;
-}
-
-#homeConteiner2 div {
-  border: 1px solid #15384e;
-  margin: 0 0.5rem 0 0.5rem;
-  height: 20rem;
-  width: 30rem;
-  border-radius: 25px;
-  background-color: #15384e;
-}
-
-#homeConteiner2 div img {
-  width: 30rem;
-}
-
-#homeConteiner2 div #mugHome {
-  width: 60rem;
-  padding-right: 27rem;
-  padding-bottom: 27rem;
-  margin-left: -5rem;
-  margin-top: -1rem;
-}
-
-#homeConteiner2 div #resmaHome {
-  width: 45rem;
-  height: 30rem;
-  padding-left: 1rem;
-  margin-top: -3.5rem;
-  margin-left: -10rem;
-}
-
-#tabla {
-  width: 40rem;
-  margin: auto;
-}
-
-#btn {
-  margin: auto;
-}
-
-#botones {
-  margin-top: 20rem;
-  margin-left: 80%;
-}
-
-#botones a {
+  font-size: calc(10px + 2vmin);
   color: white;
-  text-decoration: none;
 }
 
-#shopCart {
-  width: 30px;
-  border-color: white;
+.App-link {
+  color: #61dafb;
 }
 
-.buttonCart {
-  background-color: transparent;
-  border-style: none;
-  margin-left: 50px;
-  margin-right: 50px;
-}
-
-#counter {
-  margin-left: 1rem;
-  margin-top: 1.5rem;
-}
-
-.buttonCount {
-  margin: 0 10px 0 10px;
-}
-
-.imagenTarjeta {
-  width: 50px;
-}
-
-.cardContent {
-  height: 6rem;
-}
-
-.cardImg {
-  width: 200px;
-  height: 200px;
-  display: inline-block;
-  margin: 20px 50px 20px 50px;
-  padding: -50px;
-}
-
-.contenidoCard {
-  padding-left: 1rem;
-  margin-top: 0.5rem;
-}
-
-.contenidoCard h2 {
-  font-size: 23px;
-  word-wrap: initial;
-}
-
-.contenidoCard h5 {
-  font-size: 13px;
-}
-
-.contenidoCard h6 {
-  font-size: 18px;
-}
-
-.card {
-  border: 1px solid black;
-}
-
-#dropDown {
-  list-style: none;
-  margin-top: 1rem;
-}
-
-#dropDown ul {
-  position: absolute;
-  display: none;
-  list-style: none;
-  background-color: #15384e;
-  border: solid 1px black;
-  border-radius: 1em 1em 1em 1em;
-  height: 7rem;
-}
-
-#dropDown ul li {
-  margin: 1vh 0 1vh 0;
-}
-
-#dropDown li:hover ul {
-  display: block;
-}
-
-#loader {
-  margin-top: 100rem;
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
